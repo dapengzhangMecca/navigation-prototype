@@ -806,7 +806,7 @@ var rawData = [
   },
 ]
 
-function getMockedData = (data = []) => {
+const getMockedData = (data = []) => {
   var result = []
 
   for (let i = 0; i < data.length; i += 1) {
