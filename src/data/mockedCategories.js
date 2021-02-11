@@ -1,403 +1,882 @@
-export const mockedCategories = [
+var rawData = [
   {
-    name: 'New',
-    subCategories: [
-      { name: 'New Skincare', subCategories: [], url: '' },
-      { name: 'New Makeup', subCategories: [], url: '' },
-      { name: 'New Fragrance', subCategories: [], url: '' },
-      { name: 'New Hair Care', subCategories: [], url: '' },
-      { name: 'New Body & Personal Care', subCategories: [], url: '' },
-      { name: "New Gifts, Sets & Mini's", subCategories: [], url: '' },
-    ],
-    url: '',
+    level1: 'New',
+    level2: 'New Skincare',
+    level3: '',
   },
   {
-    name: 'Brands',
-    subCategories: [
-      { name: 'Online Exclusives', subCategories: [], url: '' },
-      { name: 'Cruelty Free Brands', subCategories: [], url: '' },
-      { name: 'A-Beauty Brands', subCategories: [], url: '' },
-      { name: 'Skincare Brands', subCategories: [], url: '' },
-      { name: 'Makeup Brands', subCategories: [], url: '' },
-      { name: 'Fragrance Brands', subCategories: [], url: '' },
-      { name: 'Hair Care Brands', subCategories: [], url: '' },
-      { name: 'Body & Personal Care Brands', subCategories: [], url: '' },
-    ],
-    url: '',
+    level1: 'New',
+    level2: 'New Makeup',
+    level3: '',
   },
   {
-    name: 'Skincare',
-    subCategories: [
-      { name: 'Discover Skincare Brands', subCategories: [], url: '' },
-      { name: 'Vegan Skincare', subCategories: [], url: '' },
-      { name: 'Skincare Sets', subCategories: [], url: '' },
-      {
-        name: 'Cleansers',
-        subCategories: [
-          { name: 'Cream & Milk Cleansers', subCategories: [], url: '' },
-          { name: 'Gel & Foaming Cleansers', subCategories: [], url: '' },
-          { name: 'Oil & Balm Cleansers', subCategories: [], url: '' },
-          { name: 'Makeup Remover', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Exfoliators & Peels',
-        subCategories: [
-          { name: 'Facial Scrub', subCategories: [], url: '' },
-          { name: 'Facial Peels', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Facial Toners', subCategories: [], url: '' },
-      {
-        name: 'Serums & Essences',
-        subCategories: [
-          { name: 'Serums', subCategories: [], url: '' },
-          { name: 'Essences', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Treatments',
-        subCategories: [
-          { name: 'Acne & Blemish Solutions', subCategories: [], url: '' },
-          { name: 'Aging', subCategories: [], url: '' },
-          { name: 'Eczema', subCategories: [], url: '' },
-          { name: 'Pigmentation', subCategories: [], url: '' },
-          { name: 'Pregnancy', subCategories: [], url: '' },
-          { name: 'Redness', subCategories: [], url: '' },
-          { name: 'Rosacea', subCategories: [], url: '' },
-          { name: 'Scarring', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Moisturisers & Oils',
-        subCategories: [
-          { name: 'Moisturiser', subCategories: [], url: '' },
-          { name: 'Facial Oils', subCategories: [], url: '' },
-          { name: 'Night Cream', subCategories: [], url: '' },
-          {
-            name: 'Tinted Moisturiser & BB Creams',
+    level1: 'New',
+    level2: 'New Fragrance',
+    level3: '',
+  },
+  {
+    level1: 'New',
+    level2: 'New Hair Care',
+    level3: '',
+  },
+  {
+    level1: 'New',
+    level2: 'New Body & Personal Care',
+    level3: '',
+  },
+  {
+    level1: 'New',
+    level2: "New Gifts, Sets & Mini's",
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Online Exclusives',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Cruelty Free Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'A-Beauty Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Skincare Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Makeup Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Fragrance Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Hair Care Brands',
+    level3: '',
+  },
+  {
+    level1: 'Brands',
+    level2: 'Body & Personal Care Brands',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Discover Skincare Brands',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Vegan Skincare',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Skincare Sets',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Cleansers',
+    level3: 'Cream & Milk Cleansers',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Cleansers',
+    level3: 'Gel & Foaming Cleansers',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Cleansers',
+    level3: 'Oil & Balm Cleansers',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Cleansers',
+    level3: 'Makeup Remover',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Exfoliators & Peels',
+    level3: 'Facial Scrub',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Exfoliators & Peels',
+    level3: 'Facial Peels',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Facial Toners',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Serums & Essences',
+    level3: 'Serums',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Serums & Essences',
+    level3: 'Essences',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Acne & Blemish Solutions',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Aging',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Eczema',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Pigmentation',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Pregnancy',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Redness',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Rosacea',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Treatments',
+    level3: 'Scarring',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Moisturisers & Oils',
+    level3: 'Moisturiser',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Moisturisers & Oils',
+    level3: 'Facial Oils',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Moisturisers & Oils',
+    level3: 'Night Cream',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Moisturisers & Oils',
+    level3: 'Tinted Moisturiser & BB Creams',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Facial Sunscreen',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Face Mists',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Masks',
+    level3: 'Sheet Mask',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Masks',
+    level3: 'Clay & Mud Masks',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Masks',
+    level3: 'Overnight Masks',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Eye Care',
+    level3: 'Eye Creams',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Eye Care',
+    level3: 'Eye Serums',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Eye Care',
+    level3: 'Undereye Masks',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Lip Care',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Hand Cream',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Tanning',
+    level3: '',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Devices',
+    level3: 'Electronic Devices',
+  },
+  {
+    level1: 'Skincare',
+    level2: 'Devices',
+    level3: 'Tools',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Discover Makeup Brands',
+    level3: '',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Vegan Makeup',
+    level3: 'Vegan Makeup',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Vegan Makeup',
+    level3: 'Vegan Makeup Brushes',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Primer',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Tinted Moisturiser & BB Creams',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Foundation',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Concealer',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Setting Powders',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Setting Sprays',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Face & Complexion',
+    level3: 'Complexion Brushes & Sponges',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Cheeks & Contour',
+    level3: 'Blush',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Cheeks & Contour',
+    level3: 'Bronzer & Contour',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Cheeks & Contour',
+    level3: 'Highlighter & Illuminator',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Cheeks & Contour',
+    level3: 'Complexion Palettes & Sets',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'Eye Primer',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'Eyeshadow Palettes & Singles',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'Eyeliner',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'Mascara',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'False Eyelashes',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eye Makeup',
+    level3: 'Eyelash Treatments',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eyebrow Makeup',
+    level3: 'Brow Pencil',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eyebrow Makeup',
+    level3: 'Brow Pomades & Shadows',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Eyebrow Makeup',
+    level3: 'Brow Gel',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Lips',
+    level3: 'Lip Liner',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Lips',
+    level3: 'Lipstick',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Lips',
+    level3: 'Lip Balms',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Lips',
+    level3: 'Lip Gloss & Oils',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Lips',
+    level3: 'Lip Sets',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Brushes & Tools',
+    level3: 'Complexion Brushes & Sponges',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Brushes & Tools',
+    level3: 'Eyeshadow Brushes',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Brushes & Tools',
+    level3: 'Brow & Lip Brushes',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Brushes & Tools',
+    level3: 'Brush Sets',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Brushes & Tools',
+    level3: 'Makeup Tools',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Makeup Remover',
+    level3: '',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Nails',
+    level3: '',
+  },
+  {
+    level1: 'Makeup',
+    level2: 'Foundation Finder',
+    level3: '',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Discover Fragrance Brands',
+    level3: '',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Fragrance & Perfumes',
+    level3: 'Mini Fragrance & Roll Ons',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Fragrance & Perfumes',
+    level3: 'Fragrance Sets',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Fragrance & Perfumes',
+    level3: 'Hair & Body Fragrance Mists',
+  },
+  {
+    level1: 'Fragrance',
+    level2: "Men's Fragrance & Cologne",
+    level3: '',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Body Fragrance',
+    level3: 'Hand Cream',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Body Fragrance',
+    level3: 'Hand & Body Wash',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Body Fragrance',
+    level3: 'Hand & Body Lotion',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Candles & Home Scents',
+    level3: 'Candles',
+  },
+  {
+    level1: 'Fragrance',
+    level2: 'Candles & Home Scents',
+    level3: 'Room Sprays & Diffusers',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Discover Hair Care Brands',
+    level3: '',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shampoo & Conditioner',
+    level3: 'Shampoo',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shampoo & Conditioner',
+    level3: 'Conditioner',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shampoo & Conditioner',
+    level3: 'Dry Shampoo',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Treatments',
+    level3: 'Hair Masks',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Treatments',
+    level3: 'Leave-in Treatments',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Treatments',
+    level3: 'Scalp Treatments',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Treatments',
+    level3: 'Hair Colour Maintenance',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Treatments',
+    level3: 'Hair Oils & Serums',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling & Care',
+    level3: 'Heat Protectant',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling & Care',
+    level3: 'Hair Sprays',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling & Care',
+    level3: 'Texturizing & Volumizing',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling & Care',
+    level3: 'Hair Gels, Mousses & Waxes',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling & Care',
+    level3: 'Curl Defining',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shop by Hair Concern',
+    level3: 'Frizz Prone Hair',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shop by Hair Concern',
+    level3: 'Oily Hair',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shop by Hair Concern',
+    level3: 'Dry & Sensitive Hair',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shop by Hair Concern',
+    level3: 'Fine Hair',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Shop by Hair Concern',
+    level3: 'Dull Hair',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Styling Tools',
+    level3: '',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Brushes & Combs',
+    level3: '',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Kits & Sets',
+    level3: '',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Hair Accessories',
+    level3: '',
+  },
+  {
+    level1: 'Hair Care',
+    level2: 'Book a Hair Consult',
+    level3: '',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Discover Body & Personal Care Brands',
+    level3: '',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Hand & Body Wash',
+    level3: 'Hand & Body Wash',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Hand & Body Wash',
+    level3: 'Hand Soap & Sanitizer',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Treatments',
+    level3: 'Cellulite',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Treatments',
+    level3: 'Dry Skin',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Treatments',
+    level3: 'Scarring',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Treatments',
+    level3: 'Stretch Marks',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Scrubs & Exfoliators',
+    level3: '',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Lotions & Oils',
+    level3: 'Body Lotions & Moisturizer',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Body Lotions & Oils',
+    level3: 'Body Oils',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Hand & Nail Care',
+    level3: 'Hand Creams',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Hand & Nail Care',
+    level3: 'Nails',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Sunscreen',
+    level3: '',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Tanning',
+    level3: '',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Personal Care',
+    level3: 'Oral Care',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Personal Care',
+    level3: 'Shaving',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Personal Care',
+    level3: 'Deodorant',
+  },
+  {
+    level1: 'Body & Personal Care',
+    level2: 'Personal Care',
+    level3: 'Supplements',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gift Cards & E-Gift Cards',
+    level3: '',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Skincare Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Makeup Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Fragrance Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Hair Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Body & Personal Care Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Category',
+    level3: 'Vegan Gifts',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Price',
+    level3: 'Gifts Under $25',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Price',
+    level3: 'Gifts $25 - $50',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Price',
+    level3: 'Gifts $50 - $75',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Price',
+    level3: 'Gifts $75 - $100',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Gifts By Price',
+    level3: 'Gifts $100 - $150',
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Skincare Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Makeup Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Fragrance Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Hair Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Body & Personal Care Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: "Mini's & Travel Size",
+    level3: "Vegan Mini's",
+  },
+  {
+    level1: "Gifts, Sets & Mini's",
+    level2: 'Corporate Gifts',
+    level3: '',
+  },
+  {
+    level1: 'Services & Events',
+    level2: '',
+    level3: '',
+  },
+  {
+    level1: 'MECCA Live',
+    level2: '',
+    level3: '',
+  },
+  {
+    level1: 'The MEMO',
+    level2: '',
+    level3: '',
+  },
+]
+
+function getMockedData = (data = []) => {
+  var result = []
+
+  for (let i = 0; i < data.length; i += 1) {
+    let item = data[i]
+    const { level1, level2, level3 } = item
+    const level1Item = result.find(item => item.name === level1)
+    if (level1 && level1Item) {
+      const level2Item = level1Item.subCategories.find(
+        item => item.name === level2,
+      )
+
+      if (level2 && level2Item) {
+        level2Item.subCategories.push({
+          name: level3,
+          subCategories: [],
+          url: '',
+          parent: level2Item,
+        })
+      } else {
+        const newItem = {
+          name: level2,
+          subCategories: [],
+          url: '',
+          parent: level1Item,
+        }
+
+        if (level3) {
+          newItem.subCategories.push({
+            name: level3,
             subCategories: [],
             url: '',
-          },
-        ],
-        url: '',
-      },
-      { name: 'Facial Sunscreen', subCategories: [], url: '' },
-      { name: 'Face Mists', subCategories: [], url: '' },
-      {
-        name: 'Masks',
-        subCategories: [
-          { name: 'Sheet Mask', subCategories: [], url: '' },
-          { name: 'Clay & Mud Masks', subCategories: [], url: '' },
-          { name: 'Overnight Masks', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Eye Care',
-        subCategories: [
-          { name: 'Eye Creams', subCategories: [], url: '' },
-          { name: 'Eye Serums', subCategories: [], url: '' },
-          { name: 'Undereye Masks', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Lip Care', subCategories: [], url: '' },
-      { name: 'Hand Cream', subCategories: [], url: '' },
-      { name: 'Tanning', subCategories: [], url: '' },
-      {
-        name: 'Devices',
-        subCategories: [
-          { name: 'Electronic Devices', subCategories: [], url: '' },
-          { name: 'Tools', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-    ],
-    url: '',
-  },
-  {
-    name: 'Makeup',
-    subCategories: [
-      { name: 'Discover Makeup Brands', subCategories: [], url: '' },
-      {
-        name: 'Vegan Makeup',
-        subCategories: [
-          { name: 'Vegan Makeup', subCategories: [], url: '' },
-          { name: 'Vegan Makeup Brushes', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Face & Complexion',
-        subCategories: [
-          { name: 'Primer', subCategories: [], url: '' },
-          {
-            name: 'Tinted Moisturiser & BB Creams',
-            subCategories: [],
-            url: '',
-          },
-          { name: 'Foundation', subCategories: [], url: '' },
-          { name: 'Concealer', subCategories: [], url: '' },
-          { name: 'Setting Powders', subCategories: [], url: '' },
-          { name: 'Setting Sprays', subCategories: [], url: '' },
-          { name: 'Complexion Brushes & Sponges', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Cheeks & Contour',
-        subCategories: [
-          { name: 'Blush', subCategories: [], url: '' },
-          { name: 'Bronzer & Contour', subCategories: [], url: '' },
-          { name: 'Highlighter & Illuminator', subCategories: [], url: '' },
-          { name: 'Complexion Palettes & Sets', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Eye Makeup',
-        subCategories: [
-          { name: 'Eye Primer', subCategories: [], url: '' },
-          { name: 'Eyeshadow Palettes & Singles', subCategories: [], url: '' },
-          { name: 'Eyeliner', subCategories: [], url: '' },
-          { name: 'Mascara', subCategories: [], url: '' },
-          { name: 'False Eyelashes', subCategories: [], url: '' },
-          { name: 'Eyelash Treatments', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Eyebrow Makeup',
-        subCategories: [
-          { name: 'Brow Pencil', subCategories: [], url: '' },
-          { name: 'Brow Pomades & Shadows', subCategories: [], url: '' },
-          { name: 'Brow Gel', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Lips',
-        subCategories: [
-          { name: 'Lip Liner', subCategories: [], url: '' },
-          { name: 'Lipstick', subCategories: [], url: '' },
-          { name: 'Lip Balms', subCategories: [], url: '' },
-          { name: 'Lip Gloss & Oils', subCategories: [], url: '' },
-          { name: 'Lip Sets', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Makeup Brushes & Tools',
-        subCategories: [
-          { name: 'Complexion Brushes & Sponges', subCategories: [], url: '' },
-          { name: 'Eyeshadow Brushes', subCategories: [], url: '' },
-          { name: 'Brow & Lip Brushes', subCategories: [], url: '' },
-          { name: 'Brush Sets', subCategories: [], url: '' },
-          { name: 'Makeup Tools', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Makeup Remover', subCategories: [], url: '' },
-      { name: 'Nails', subCategories: [], url: '' },
-      { name: 'Foundation Finder', subCategories: [], url: '' },
-    ],
-    url: '',
-  },
-  {
-    name: 'Fragrance',
-    subCategories: [
-      { name: 'Discover Fragrance Brands', subCategories: [], url: '' },
-      {
-        name: 'Fragrance & Perfumes',
-        subCategories: [
-          { name: 'Mini Fragrance & Roll Ons', subCategories: [], url: '' },
-          { name: 'Fragrance Sets', subCategories: [], url: '' },
-          { name: 'Hair & Body Fragrance Mists', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: "Men's Fragrance & Cologne", subCategories: [], url: '' },
-      {
-        name: 'Body Fragrance',
-        subCategories: [
-          { name: 'Hand Cream', subCategories: [], url: '' },
-          { name: 'Hand & Body Wash', subCategories: [], url: '' },
-          { name: 'Hand & Body Lotion', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Candles & Home Scents',
-        subCategories: [
-          { name: 'Candles', subCategories: [], url: '' },
-          { name: 'Room Sprays & Diffusers', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-    ],
-    url: '',
-  },
-  {
-    name: 'Hair Care',
-    subCategories: [
-      { name: 'Discover Hair Care Brands', subCategories: [], url: '' },
-      {
-        name: 'Shampoo & Conditioner',
-        subCategories: [
-          { name: 'Shampoo', subCategories: [], url: '' },
-          { name: 'Conditioner', subCategories: [], url: '' },
-          { name: 'Dry Shampoo', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Hair Treatments',
-        subCategories: [
-          { name: 'Hair Masks', subCategories: [], url: '' },
-          { name: 'Leave-in Treatments', subCategories: [], url: '' },
-          { name: 'Scalp Treatments', subCategories: [], url: '' },
-          { name: 'Hair Colour Maintenance', subCategories: [], url: '' },
-          { name: 'Hair Oils & Serums', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Hair Styling & Care',
-        subCategories: [
-          { name: 'Heat Protectant', subCategories: [], url: '' },
-          { name: 'Hair Sprays', subCategories: [], url: '' },
-          { name: 'Texturizing & Volumizing', subCategories: [], url: '' },
-          { name: 'Hair Gels, Mousses & Waxes', subCategories: [], url: '' },
-          { name: 'Curl Defining', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Shop by Hair Concern',
-        subCategories: [
-          { name: 'Frizz Prone Hair', subCategories: [], url: '' },
-          { name: 'Oily Hair', subCategories: [], url: '' },
-          { name: 'Dry & Sensitive Hair', subCategories: [], url: '' },
-          { name: 'Fine Hair', subCategories: [], url: '' },
-          { name: 'Dull Hair', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Hair Styling Tools', subCategories: [], url: '' },
-      { name: 'Hair Brushes & Combs', subCategories: [], url: '' },
-      { name: 'Hair Kits & Sets', subCategories: [], url: '' },
-      { name: 'Hair Accessories', subCategories: [], url: '' },
-      { name: 'Book a Hair Consult', subCategories: [], url: '' },
-    ],
-    url: '',
-  },
-  {
-    name: 'Body & Personal Care',
-    subCategories: [
-      {
-        name: 'Discover Body & Personal Care Brands',
+            parent: newItem,
+          })
+        }
+        level1Item.subCategories.push(newItem)
+      }
+    } else {
+      const newItem = {
+        name: level1,
         subCategories: [],
         url: '',
-      },
-      {
-        name: 'Hand & Body Wash',
-        subCategories: [
-          { name: 'Hand & Body Wash', subCategories: [], url: '' },
-          { name: 'Hand Soap & Sanitizer', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Body Treatments',
-        subCategories: [
-          { name: 'Cellulite', subCategories: [], url: '' },
-          { name: 'Dry Skin', subCategories: [], url: '' },
-          { name: 'Scarring', subCategories: [], url: '' },
-          { name: 'Stretch Marks', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Body Scrubs & Exfoliators', subCategories: [], url: '' },
-      {
-        name: 'Body Lotions & Oils',
-        subCategories: [
-          { name: 'Body Lotions & Moisturizer', subCategories: [], url: '' },
-          { name: 'Body Oils', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Hand & Nail Care',
-        subCategories: [
-          { name: 'Hand Creams', subCategories: [], url: '' },
-          { name: 'Nails', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Sunscreen', subCategories: [], url: '' },
-      { name: 'Tanning', subCategories: [], url: '' },
-      {
-        name: 'Personal Care',
-        subCategories: [
-          { name: 'Oral Care', subCategories: [], url: '' },
-          { name: 'Shaving', subCategories: [], url: '' },
-          { name: 'Deodorant', subCategories: [], url: '' },
-          { name: 'Supplements', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-    ],
-    url: '',
-  },
-  {
-    name: "Gifts, Sets & Mini's",
-    subCategories: [
-      { name: 'Gift Cards & E-Gift Cards', subCategories: [], url: '' },
-      {
-        name: 'Gifts By Category',
-        subCategories: [
-          { name: 'Skincare Gifts', subCategories: [], url: '' },
-          { name: 'Makeup Gifts', subCategories: [], url: '' },
-          { name: 'Fragrance Gifts', subCategories: [], url: '' },
-          { name: 'Hair Gifts', subCategories: [], url: '' },
-          { name: 'Body & Personal Care Gifts', subCategories: [], url: '' },
-          { name: 'Vegan Gifts', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: 'Gifts By Price',
-        subCategories: [
-          { name: 'Gifts Under $25', subCategories: [], url: '' },
-          { name: 'Gifts $25 - $50', subCategories: [], url: '' },
-          { name: 'Gifts $50 - $75', subCategories: [], url: '' },
-          { name: 'Gifts $75 - $100', subCategories: [], url: '' },
-          { name: 'Gifts $100 - $150', subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      {
-        name: "Mini's & Travel Size",
-        subCategories: [
-          { name: "Skincare Mini's", subCategories: [], url: '' },
-          { name: "Makeup Mini's", subCategories: [], url: '' },
-          { name: "Fragrance Mini's", subCategories: [], url: '' },
-          { name: "Hair Mini's", subCategories: [], url: '' },
-          { name: "Body & Personal Care Mini's", subCategories: [], url: '' },
-          { name: "Vegan Mini's", subCategories: [], url: '' },
-        ],
-        url: '',
-      },
-      { name: 'Corporate Gifts', subCategories: [], url: '' },
-    ],
-    url: '',
-  },
-  { name: 'Services & Events', subCategories: [], url: '' },
-  { name: 'MECCA Live', subCategories: [], url: '' },
-  { name: 'The MEMO', subCategories: [], url: '' },
-]
+      }
+
+      if (level2) {
+        const newSubItem = {
+          name: level2,
+          subCategories: [],
+          url: '',
+          parent: newItem,
+        }
+
+        if (level3) {
+          const newSubSubItem = {
+            name: level3,
+            subCategories: [],
+            url: '',
+            parent: newSubItem,
+          }
+
+          newSubItem.subCategories.push(newSubSubItem)
+        }
+
+        newItem.subCategories.push(newSubItem)
+      }
+
+      result.push(newItem)
+    }
+  }
+
+  return result
+}
+
+export const mockedCategories = getMockedData(rawData)
