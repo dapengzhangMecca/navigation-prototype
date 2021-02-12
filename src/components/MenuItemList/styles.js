@@ -28,7 +28,7 @@ export const menuItemListWrapper = css`
   }
 
   &.slide-in {
-    transform: translateX(10px);
+    transform: translateX(0);
   }
 
   &.slide-out {

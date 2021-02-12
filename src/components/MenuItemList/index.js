@@ -36,10 +36,12 @@ export default ({
   useEffect(() => {
     if (toSlideIn && ref.current) {
       ref.current.classList.add('slide-in')
+      ref.current.classList.remove('slide-out')
     }
 
     if (toSlideOut && ref.current) {
       ref.current.classList.add('slide-out')
+      ref.current.classList.remove('slide-in')
     }
   }, [toSlideIn, toSlideOut])
 
