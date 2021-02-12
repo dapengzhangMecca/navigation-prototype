@@ -34,9 +34,9 @@ export default ({
   handleMenuItemClick = () => {},
   handleBackButtonClick = () => {},
   handleAnchorClick = () => {},
-  showMenuHead,
   toSlideIn,
   toSlideOut,
+  isFirstLevel,
 }) => {
   const { subCategories = [], url, name } = category
   const ref = useRef()
@@ -55,21 +55,46 @@ export default ({
 
   return (
     <div ref={ref} css={styles.menuItemListWrapper}>
-      {showMenuHead ? (
+      {isFirstLevel ? (
+        <div css={styles.menuHeadPlaceholder} />
+      ) : (
         <MenuHead
           handleBackButtonClick={handleBackButtonClick}
           name={name}
           url={url}
           handleAnchorClick={handleAnchorClick}
         />
-      ) : (
-        <div css={styles.menuHeadPlaceholder} />
       )}
       {subCategories.map(item => {
         return (
-          <MenuItem key={item.name} item={item} onClick={handleMenuItemClick} />
+          <MenuItem
+            key={item.name}
+            item={item}
+            onClick={handleMenuItemClick}
+            hasBorder={isFirstLevel}
+          />
         )
       })}
+      {isFirstLevel && (
+        <div css={styles.navigationFooter}>
+          <div>
+            <span className="dot" />
+            <span>My Account</span>
+          </div>
+          <div>
+            <span className="dot" />
+            <span>Shipping &#38; Returns</span>
+          </div>
+          <div>
+            <span className="dot" />
+            <span>Beauty Loop</span>
+          </div>
+          <div>
+            <span className="dot" />
+            <span>Book a Service</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -6,10 +6,11 @@ import {
   resetButtonStyle,
 } from '/src/utils/styles'
 
-export const menuItem = css`
+export const menuItem = hasBorder => css`
   ${resetButtonStyle}
 
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 18px 30px;
   width: 100%;
 
@@ -19,9 +20,15 @@ export const menuItem = css`
   color: ${colorSecondary1};
   text-align: left;
 
-  // border-top: 1px solid ${colorSecondary2};
-  // border-bottom: 1px solid ${colorSecondary2};
-  // &:not(:first-of-type) {
-  //   margin-top: -1px;
-  // }
+  ${hasBorder &&
+  `border-top: 1px solid ${colorSecondary2};
+  border-bottom: 1px solid ${colorSecondary2};
+  &:not(:first-of-type) {
+    margin-top: -1px;
+  }`}
+`
+
+export const rightArrow = css`
+  width: 10px;
+  height: 10px;
 `

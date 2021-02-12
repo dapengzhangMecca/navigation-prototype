@@ -3,6 +3,8 @@ import {
   SansSerif,
   colorSecondary1,
   colorSecondary2,
+  colorSecondary3,
+  colorSecondary4,
   resetButtonStyle,
 } from '/src/utils/styles'
 
@@ -83,4 +85,28 @@ export const categoryLink = css`
 
 export const menuHeadPlaceholder = css`
   margin-top: 30px;
+`
+
+export const navigationFooter = css`
+  background: ${colorSecondary1};
+  padding: 20px 5px;
+
+  div {
+    padding: 20px;
+    display: flex;
+
+    span {
+      padding-left: 20px;
+      font-family: ${SansSerif};
+      color: ${colorSecondary3};
+    }
+
+    .dot {
+      padding: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: ${colorSecondary4};
+    }
+  }
 `
