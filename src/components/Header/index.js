@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Global } from '@emotion/react'
+
 import { mockedCategories } from '/src/data/mockedCategories'
 import Menu from '/src/components/MenuWrapper'
 import * as styles from './styles'
@@ -11,6 +13,16 @@ export default ({ handleAnchorClick }) => {
   }
   return (
     <header>
+      {showMenu && (
+        <Global
+          styles={{
+            body: {
+              overflow: 'hidden',
+            },
+          }}
+        />
+      )}
+
       <div css={styles.banner}>
         Free shipping on orders over $25. Read more.
       </div>
