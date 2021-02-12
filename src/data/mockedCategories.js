@@ -807,12 +807,13 @@ var rawData = [
 ]
 
 const getMockedData = (data = []) => {
-  var result = []
+  const root = {}
+  const list = []
 
   for (let i = 0; i < data.length; i += 1) {
     let item = data[i]
     const { level1, level2, level3 } = item
-    const level1Item = result.find(item => item.name === level1)
+    const level1Item = list.find(item => item.name === level1)
     if (level1 && level1Item) {
       const level2Item = level1Item.subCategories.find(
         item => item.name === level2,
@@ -848,6 +849,7 @@ const getMockedData = (data = []) => {
         name: level1,
         subCategories: [],
         url: '',
+        parent: root,
       }
 
       if (level2) {
@@ -872,11 +874,13 @@ const getMockedData = (data = []) => {
         newItem.subCategories.push(newSubItem)
       }
 
-      result.push(newItem)
+      list.push(newItem)
     }
   }
 
-  return result
+  root.subCategories = list
+  root.level = 0
+  return root
 }
 
 export const mockedCategories = getMockedData(rawData)

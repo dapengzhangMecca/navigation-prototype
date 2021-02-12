@@ -87,3 +87,10 @@ export const colorSecondary31 = '#999999'
 export const colorSecondary4 = '#BABABA'
 export const colorSecondary5 = '#DADADA'
 export const colorSecondary6 = '#fff6f4'
+
+export const resetButtonStyle = `
+  border: 0;
+  background: transparent;
+  outline: 0;
+  cursor: pointer;
+`

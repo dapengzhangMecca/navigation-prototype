@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { globalFont } from '/src/utils/styles'
+// import SlideInPanel from '../components/SlideInPanel'
+import Header from '/src/components/Header'
 
 const IndexPage = () => {
   return (
@@ -16,6 +18,7 @@ const IndexPage = () => {
         />
         <style>{globalFont}</style>
       </Helmet>
+      <Header />
     </>
   )
 }
