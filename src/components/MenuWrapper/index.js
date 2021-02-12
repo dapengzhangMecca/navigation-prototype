@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import MenuItemList from '/src/components/MenuItemList'
 
 // const handleAnchorClick = url => {
 //   window.location.replace(url)
 // }
 
-export default ({ category = {}, handleAnchorClick = () => {} }) => {
+export default ({ category = {}, handleAnchorClick = () => {}, showMenu }) => {
   const cachedListRef = useRef([category])
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(
     cachedListRef.current.length - 1,
@@ -41,6 +41,14 @@ export default ({ category = {}, handleAnchorClick = () => {} }) => {
     setActiveCategoryIndex(index => index - 1)
   }
 
+  useEffect(() => {
+    // reset when close menu
+    if (!showMenu) {
+      cachedListRef.current = [category]
+      setActiveCategoryIndex(0)
+      setExit(false)
+    }
+  }, [showMenu, category])
   return (
     <>
       {cachedListRef.current.map((theCategory, index) => {
