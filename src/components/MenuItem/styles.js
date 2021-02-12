@@ -21,11 +21,12 @@ export const menuItem = hasBorder => css`
   text-align: left;
 
   ${hasBorder &&
-  `border-top: 1px solid ${colorSecondary2};
-  border-bottom: 1px solid ${colorSecondary2};
-  &:not(:first-of-type) {
-    margin-top: -1px;
-  }`}
+  `
+    border-bottom: 1px solid ${colorSecondary2};
+    &:first-of-type {
+      border-top: 1px solid ${colorSecondary2};
+    }
+  `}
 `
 
 export const rightArrow = css`
