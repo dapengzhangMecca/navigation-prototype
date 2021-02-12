@@ -3,7 +3,7 @@ import MenuItem from '/src/components/MenuItem'
 
 import * as styles from './styles'
 
-const MenuHead = ({ handleBackButtonClick, name, url }) => {
+const MenuHead = ({ handleBackButtonClick, name, url, handleAnchorClick }) => {
   return (
     <>
       <button
@@ -15,7 +15,14 @@ const MenuHead = ({ handleBackButtonClick, name, url }) => {
       </button>
       {name && <div css={styles.categoryName}>{name}</div>}
       <hr css={styles.hr} />
-      <a href={url} css={styles.categoryLink}>
+      <a
+        href={url}
+        css={styles.categoryLink}
+        onClick={event => {
+          event.preventDefault()
+          handleAnchorClick({ name })
+        }}
+      >
         Shop All
       </a>
     </>
@@ -26,6 +33,7 @@ export default ({
   category = {},
   handleMenuItemClick = () => {},
   handleBackButtonClick = () => {},
+  handleAnchorClick = () => {},
   showMenuHead,
   toSlideIn,
   toSlideOut,
@@ -52,6 +60,7 @@ export default ({
           handleBackButtonClick={handleBackButtonClick}
           name={name}
           url={url}
+          handleAnchorClick={handleAnchorClick}
         />
       ) : (
         <div css={styles.menuHeadPlaceholder} />

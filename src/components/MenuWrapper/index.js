@@ -1,12 +1,11 @@
 import React, { useRef, useState } from 'react'
 import MenuItemList from '/src/components/MenuItemList'
 
-const handleNavigation = url => {
-  // TODO: mock another behavior for demo
-  window.location.replace(url)
-}
+// const handleAnchorClick = url => {
+//   window.location.replace(url)
+// }
 
-export default ({ category = {} }) => {
+export default ({ category = {}, handleAnchorClick = () => {} }) => {
   const cachedListRef = useRef([category])
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(
     cachedListRef.current.length - 1,
@@ -33,7 +32,7 @@ export default ({ category = {} }) => {
         setActiveCategoryIndex(cachedListRef.current.length - 1)
       }
     } else {
-      handleNavigation(item.url)
+      handleAnchorClick(item)
     }
   }
 
@@ -53,6 +52,7 @@ export default ({ category = {} }) => {
             category={theCategory}
             handleMenuItemClick={handleMenuItemClick}
             handleBackButtonClick={handleBackButtonClick}
+            handleAnchorClick={handleAnchorClick}
             showMenuHead={index > 0}
             toSlideIn={toSlideIn}
             toSlideOut={toSlideOut}

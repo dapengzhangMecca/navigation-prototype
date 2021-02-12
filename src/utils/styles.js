@@ -81,16 +81,13 @@ export const globalFont = `
 export const SansSerif = "'ECB',arial,sans-serif"
 
 export const colorSecondary1 = '#181818'
-export const colorSecondary2 = '#666666'
-export const colorSecondary3 = '#888888'
-export const colorSecondary31 = '#999999'
-export const colorSecondary4 = '#BABABA'
-export const colorSecondary5 = '#DADADA'
-export const colorSecondary6 = '#fff6f4'
+export const colorSecondary2 = '#888888'
+export const colorSecondary3 = '#F9F9F9'
 
 export const resetButtonStyle = `
   border: 0;
   background: transparent;
-  outline: 0;
+  outline: none;
   cursor: pointer;
+  user-select: none; 
 `
