@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { mockedCategories } from '/src/data/mockedCategories'
-import Menu from '/src/components/menuWrapper'
+import Menu from '/src/components/MenuWrapper'
 import * as styles from './styles'
 
 export default () => {
