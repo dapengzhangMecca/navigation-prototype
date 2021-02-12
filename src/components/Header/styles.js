@@ -1,8 +1,43 @@
 import { css } from '@emotion/react'
-import { resetButtonStyle } from '/src/utils/styles'
+import {
+  resetButtonStyle,
+  colorSecondary1,
+  colorSecondary3,
+} from '/src/utils/styles'
 
-export const menuButton = show => css`
-  ${show && 'opacity: 0;'}
+export const banner = css`
+  padding: 25px 15px;
+  font-size: 12px;
+  text-align: center;
+  color: ${colorSecondary1};
+  background: ${colorSecondary3};
+`
+
+export const inlineWrapper = css`
+  padding: 21px 18px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    vertical-align: middle;
+    width: 122px;
+    height: 25px;
+  }
+  div {
+    display: inline-block;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 14px;
+    padding: 0 10px;
+  }
+`
+
+export const menuButton = css`
+  ${resetButtonStyle}
+  color: ${colorSecondary1};
+  font-size: 12px;
 `
 
 export const menuWrapper = show => css`
@@ -26,4 +61,8 @@ export const closeButton = css`
   font-size: 20px;
   padding: 20px;
   color: white;
+
+  @media (max-width: 360px) {
+    left: 260px;
+  }
 `

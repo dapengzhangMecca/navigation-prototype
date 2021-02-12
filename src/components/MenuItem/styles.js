@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import {
   SansSerif,
   colorSecondary1,
-  colorSecondary3,
+  colorSecondary2,
   resetButtonStyle,
 } from '/src/utils/styles'
 
@@ -19,8 +19,8 @@ export const menuItem = css`
   color: ${colorSecondary1};
   text-align: left;
 
-  // border-top: 1px solid ${colorSecondary3};
-  // border-bottom: 1px solid ${colorSecondary3};
+  // border-top: 1px solid ${colorSecondary2};
+  // border-bottom: 1px solid ${colorSecondary2};
   // &:not(:first-of-type) {
   //   margin-top: -1px;
   // }

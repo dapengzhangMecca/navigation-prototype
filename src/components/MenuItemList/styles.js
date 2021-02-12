@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import {
   SansSerif,
   colorSecondary1,
-  colorSecondary3,
+  colorSecondary2,
   resetButtonStyle,
 } from '/src/utils/styles'
 
@@ -18,6 +18,10 @@ export const menuItemListWrapper = css`
   background: white;
   transition: all 400ms ease-in-out;
   transform: translateX(-320px);
+
+  @media (max-width: 360px) {
+    width: 260px;
+  }
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -53,7 +57,7 @@ export const categoryName = css`
 `
 
 export const hr = css`
-  border-top: 1px solid ${colorSecondary3};
+  border-top: 1px solid ${colorSecondary2};
 `
 
 export const categoryLink = css`
