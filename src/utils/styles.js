@@ -81,8 +81,9 @@ export const globalFont = `
 export const SansSerif = "'ECB',arial,sans-serif"
 
 export const colorSecondary1 = '#181818'
-export const colorSecondary2 = '#888888'
+export const colorSecondary2 = '#88888828'
 export const colorSecondary3 = '#F9F9F9'
+export const colorSecondary4 = '#bababa'
 
 export const resetButtonStyle = `
   border: 0;

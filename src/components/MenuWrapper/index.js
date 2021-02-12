@@ -61,7 +61,7 @@ export default ({ category = {}, handleAnchorClick = () => {}, showMenu }) => {
             handleMenuItemClick={handleMenuItemClick}
             handleBackButtonClick={handleBackButtonClick}
             handleAnchorClick={handleAnchorClick}
-            showMenuHead={index > 0}
+            isFirstLevel={index === 0}
             toSlideIn={toSlideIn}
             toSlideOut={toSlideOut}
           />
