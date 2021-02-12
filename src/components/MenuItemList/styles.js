@@ -89,7 +89,7 @@ export const menuHeadPlaceholder = css`
 
 export const navigationFooter = css`
   background: ${colorSecondary1};
-  padding: 20px 5px;
+  padding: 20px 5px 106px;
 
   div {
     padding: 20px;
