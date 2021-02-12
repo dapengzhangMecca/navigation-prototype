@@ -1,8 +1,26 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet'
 
-// markup
+import { globalFont } from '/src/utils/styles'
+// import SlideInPanel from '../components/SlideInPanel'
+import Header from '/src/components/Header'
+
 const IndexPage = () => {
-  return <h1>Hello World!</h1>
+  return (
+    <>
+      <Helmet>
+        <title>Navigation</title>
+        <link
+          rel="stylesheet"
+          href="https://static.mecca.com.au/assets/global/css/reset.min.css"
+          type="text/css"
+          media="screen"
+        />
+        <style>{globalFont}</style>
+      </Helmet>
+      <Header />
+    </>
+  )
 }
 
 export default IndexPage
