@@ -57,6 +57,7 @@ export const hr = css`
 `
 
 export const categoryLink = css`
+  ${resetButtonStyle}
   display: block;
   padding: 18px 30px;
   width: 100%;

@@ -1,10 +1,15 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 
 import { globalFont } from '/src/utils/styles'
 import Header from '/src/components/Header'
+import Message from '/src/components/Message'
 
 const IndexPage = () => {
+  const [categoryName, setCategoryName] = useState('')
+  const handleAnchorClick = (item = {}) => {
+    setCategoryName(item.name)
+  }
   return (
     <>
       <Helmet>
@@ -17,7 +22,12 @@ const IndexPage = () => {
         />
         <style>{globalFont}</style>
       </Helmet>
-      <Header />
+      <Header handleAnchorClick={handleAnchorClick} />
+      {categoryName && (
+        <Message
+          message={`Congratulations! You have landed on ${categoryName} page!`}
+        />
+      )}
     </>
   )
 }

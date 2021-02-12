@@ -91,6 +91,7 @@ export const colorSecondary6 = '#fff6f4'
 export const resetButtonStyle = `
   border: 0;
   background: transparent;
-  outline: 0;
+  outline: none;
   cursor: pointer;
+  user-select: none; 
 `
