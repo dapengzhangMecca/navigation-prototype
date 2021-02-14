@@ -61,6 +61,7 @@ export const closeButton = css`
   font-size: 20px;
   padding: 20px;
   color: white;
+  font-weight: 900;
 
   @media (max-width: 360px) {
     left: 260px;

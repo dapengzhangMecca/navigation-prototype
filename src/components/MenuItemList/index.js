@@ -71,7 +71,7 @@ export default ({
             key={item.name}
             item={item}
             onClick={handleMenuItemClick}
-            hasBorder={isFirstLevel}
+            isFirstLevel={isFirstLevel}
           />
         )
       })}
