@@ -6,7 +6,7 @@ import {
   resetButtonStyle,
 } from '/src/utils/styles'
 
-export const menuItem = hasBorder => css`
+export const menuItem = isFirstLevel => css`
   ${resetButtonStyle}
 
   display: flex;
@@ -15,14 +15,18 @@ export const menuItem = hasBorder => css`
   width: 100%;
 
   font-family: ${SansSerif};
-  font-size: 16px;
-  font-weight: 300;
   color: ${colorSecondary1};
   text-align: left;
 
-  ${hasBorder &&
+  font-size: 14px;
+  font-weight: 300;
+
+  ${isFirstLevel &&
   `
     border-bottom: 1px solid ${colorSecondary2};
+    font-size: 16px;
+    font-weight: 600;
+
     &:first-of-type {
       border-top: 1px solid ${colorSecondary2};
     }
@@ -30,6 +34,6 @@ export const menuItem = hasBorder => css`
 `
 
 export const rightArrow = css`
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
 `

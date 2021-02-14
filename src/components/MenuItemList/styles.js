@@ -53,7 +53,7 @@ export const categoryName = css`
   width: 100%;
   font-family: ${SansSerif};
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   color: ${colorSecondary1};
   text-align: left;
 `
@@ -99,6 +99,10 @@ export const navigationFooter = css`
       padding-left: 20px;
       font-family: ${SansSerif};
       color: ${colorSecondary3};
+      font-size: 14px;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-weight: 400;
     }
 
     .dot {
