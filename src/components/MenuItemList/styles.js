@@ -12,9 +12,9 @@ export const menuItemListWrapper = css`
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   display: inline-block;
   width: 320px;
-  height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   background: white;
@@ -89,7 +89,7 @@ export const menuHeadPlaceholder = css`
 
 export const navigationFooter = css`
   background: ${colorSecondary1};
-  padding: 20px 5px 106px;
+  padding: 20px 5px;
 
   div {
     padding: 20px;
