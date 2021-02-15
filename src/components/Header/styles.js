@@ -53,6 +53,14 @@ export const menuWrapper = show => css`
   ${show && 'transform: translateX(0);'}
 `
 
+export const innerWrapper = css`
+  width: 320px;
+
+  @media (max-width: 360px) {
+    width: 260px;
+  }
+`
+
 export const closeButton = css`
   ${resetButtonStyle}
   position: absolute;
