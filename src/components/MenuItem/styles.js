@@ -23,13 +23,9 @@ export const menuItem = isFirstLevel => css`
 
   ${isFirstLevel &&
   `
-    border-bottom: 1px solid ${colorSecondary2};
+    border-top: 1px solid ${colorSecondary2};
     font-size: 16px;
     font-weight: 600;
-
-    &:first-of-type {
-      border-top: 1px solid ${colorSecondary2};
-    }
   `}
 `
 

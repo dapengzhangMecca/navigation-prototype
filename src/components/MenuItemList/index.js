@@ -11,7 +11,22 @@ const MenuHead = ({ handleBackButtonClick, name, url, handleAnchorClick }) => {
         css={styles.backButton}
         onClick={handleBackButtonClick}
       >
-        &larr;
+        <svg
+          width="24"
+          height="13"
+          viewBox="0 0 24 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M6.19797 1L7.04376 1.88472L3.29617 5.92603H23V7.19521H3.29617L7.04376 11.1153L6.19797 12L1 6.5628L6.19797 1Z"
+            fill="#181818"
+            stroke="#181818"
+            strokeWidth="0.5"
+          />
+        </svg>
       </button>
       {name && <div css={styles.categoryName}>{name}</div>}
       <hr css={styles.hr} />
