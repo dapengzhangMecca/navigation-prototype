@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Global } from '@emotion/react'
 
 import { mockedCategories } from '/src/data/mockedCategories'
@@ -6,11 +6,30 @@ import Menu from '/src/components/MenuWrapper'
 import * as styles from './styles'
 
 export default ({ handleAnchorClick }) => {
+  const menuOuterRef = useRef()
+  const menuInnerRef = useRef()
   const [showMenu, setShowMenu] = useState(false)
   const handleAnchorClickAndCloseMenu = item => {
     handleAnchorClick(item)
     setShowMenu(false)
   }
+  useEffect(() => {
+    if (menuOuterRef.current && menuInnerRef.current) {
+      const outerNode = menuOuterRef.current
+      const innerNode = menuInnerRef.current
+
+      const handleClickOutside = event => {
+        if (!innerNode.contains(event.target)) {
+          setShowMenu(false)
+        }
+      }
+      outerNode.addEventListener('click', handleClickOutside)
+      return () => {
+        outerNode.removeEventListener('click', handleClickOutside)
+      }
+    }
+    return () => {}
+  }, [])
   return (
     <header>
       {showMenu && (
@@ -61,12 +80,14 @@ export default ({ handleAnchorClick }) => {
           </span>
         </div>
       </div>
-      <div css={styles.menuWrapper(showMenu)}>
-        <Menu
-          category={mockedCategories}
-          showMenu={showMenu}
-          handleAnchorClick={handleAnchorClickAndCloseMenu}
-        />
+      <div ref={menuOuterRef} css={styles.menuWrapper(showMenu)}>
+        <div ref={menuInnerRef} css={styles.innerWrapper}>
+          <Menu
+            category={mockedCategories}
+            showMenu={showMenu}
+            handleAnchorClick={handleAnchorClickAndCloseMenu}
+          />
+        </div>
 
         <button
           type="button"
