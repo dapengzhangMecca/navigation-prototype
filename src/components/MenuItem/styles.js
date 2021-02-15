@@ -11,7 +11,7 @@ export const menuItem = isFirstLevel => css`
 
   display: flex;
   justify-content: space-between;
-  padding: 18px 30px;
+  padding: 18px 30px 18px 20px;
   width: 100%;
 
   font-family: ${SansSerif};
