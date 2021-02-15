@@ -49,7 +49,7 @@ export const backButton = css`
 `
 
 export const categoryName = css`
-  padding: 18px 30px;
+  padding: 18px 30px 28px;
   width: 100%;
   font-family: ${SansSerif};
   font-size: 18px;
@@ -60,16 +60,17 @@ export const categoryName = css`
 
 export const hr = css`
   border-top: 1px solid ${colorSecondary2};
+  margin: 0;
 `
 
 export const categoryLink = css`
   ${resetButtonStyle}
   display: block;
-  padding: 18px 30px;
+  padding: 40px 30px 18px;
   width: 100%;
 
   font-family: ${SansSerif};
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   text-align: left;
 
