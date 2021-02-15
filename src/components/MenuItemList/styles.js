@@ -44,12 +44,12 @@ export const menuItemListWrapper = css`
 
 export const backButton = css`
   ${resetButtonStyle}
-  padding: 18px 30px;
+  padding: 18px 30px 18px 20px;
   font-size: 32px;
 `
 
 export const categoryName = css`
-  padding: 18px 30px 28px;
+  padding: 18px 30px 28px 20px;
   width: 100%;
   font-family: ${SansSerif};
   font-size: 18px;
@@ -66,7 +66,7 @@ export const hr = css`
 export const categoryLink = css`
   ${resetButtonStyle}
   display: block;
-  padding: 40px 30px 18px;
+  padding: 40px 30px 18px 20px;
   width: 100%;
 
   font-family: ${SansSerif};
